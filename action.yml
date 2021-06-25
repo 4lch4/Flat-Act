@@ -1,0 +1,40 @@
+name: '@4lch4/Flat'
+description: A fork of the original Flat action which powers data fecthing for Flat.
+author: 4lch4
+inputs:
+  downloaded_filename:
+    description: 'The filename to use for writing data.'
+    required: false
+  http_url:
+    description: 'A URL containing data to fetch.'
+    required: false
+  authorization:
+    description: 'A string to send as a header for authorizing API requests.'
+    required: false
+  mask:
+    description: 'A string array of secrets to strip from the http_url or a string boolean'
+    required: false
+  sql_connstring:
+    description: 'A connection string for making a SQL query.'
+    required: false
+  sql_queryfile:
+    description: 'A path (relative to the root of your repo) of a SQL query file to execute for fetching data.'
+    required: false
+    default: '.github/workflows/query.sql'
+  typeorm_config:
+    description: 'A JSON string representing a configuration passed to TypeORMs createConnection function'
+    required: false
+  postprocess:
+    description: 'A path (relative to the root of your repo) or a URL to a deno postprocessing script.'
+    required: false
+outputs:
+  delta_bytes:
+   description: The overall number of byteschanged in the output data this run (current size - previous size.)
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+  post: 'dist/post/index.js'
+branding:
+  color: 'purple'
+  icon: 'download-cloud'
+
