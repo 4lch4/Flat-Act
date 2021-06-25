@@ -1,6 +1,6 @@
 {
   "name": "flat",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "This project is a GitHub action based on the original Flat Action published by GitHub OCTO (Office of the CTO).",
   "main": "dist/index.js",
   "scripts": {
