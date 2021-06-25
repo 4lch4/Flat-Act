@@ -27,6 +27,9 @@ inputs:
   postprocess:
     description: 'A path (relative to the root of your repo) or a URL to a deno postprocessing script.'
     required: false
+  who-to-greet:
+    description: A name of someone to greet.
+    required: true
 outputs:
   delta_bytes:
    description: The overall number of byteschanged in the output data this run (current size - previous size.)
